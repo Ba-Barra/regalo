@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Love You</title>
+    <link rel="icon" type="image/x-icon" href="Love_files/icon.png">
+    <meta name="language" content="es-ES">
+    <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
+    <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./Love_files/jscex.min.js"></script>
+    <script type="text/javascript" src="./Love_files/jscex-parser.js"></script>
+    <script type="text/javascript" src="./Love_files/jscex-jit.js"></script>
+    <script type="text/javascript" src="./Love_files/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./Love_files/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./Love_files/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./Love_files/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="error">
+            Tu navegador que estás usando no es compatible. Por favor, usa Chrome o Firefox.
+        </div>
+
+        <div id="wrap-container">
+            <div id="wrap">
+                <div id="text">
+                    <div id="code">
+                        <span class="say">Para mi amorcito:</span><br><br>
+                        <span class="say">Tal vez no estemos juntitos ahora pero te puedo entregar esto</span><br>
+                        <span class="say">Esperando que podamos estar juntitos luego para poder regalonearnos.</span><br>
+                        <span class="say">Te amo mucho mi tontona y cada dia te amo mas.</span>
+                        <span class="say"><span class="space"></span> — Me encantas!</span>
+                    </div>
+                </div>
+                <div id="clock-box">
+                    <a href="#" target="_blank">Ya</a>
+                    <a href="#" target="_blank">Llevamos </a> juntitos...
+                    <div id="clock"></div>
+                </div>
+
+                <canvas id="canvas" width="1100" height="680"></canvas>
+            </div>
+        </div>
+
+        <div id="photo-gallery">
+            <h3>GALERIA</h3>
+            <p style="font-size: 14px; color: #666; margin-top: -20px; margin-bottom: 20px;">(Toca las fotos para ver un mensaje)</p>
+            <div class="gallery-container">
+                <img src="Love_files/foto1.jpg" class="gallery-photo" alt="Foto 1" data-mensaje="Una de mis fotitos favoritas :3.">
+                
+                <img src="Love_files/foto2.jpg" class="gallery-photo" alt="Foto 2" data-mensaje="Una de nuestras primeras salidas. Cuando fuimos a ver un patito jeje">
+                
+                <img src="Love_files/foto3.jpg" class="gallery-photo" alt="Foto 3" data-mensaje="Y una foto de tu poto porque lo aprecio mucho uwu">
+            </div>
+        </div>
+
+        <div id="photo-modal">
+            <span id="modal-close">&times;</span>
+            <img id="modal-img" src="">
+            <div id="modal-caption"></div>
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+
+    <script>
+        window.currentScale = 1;
+
+        function adaptarPantalla() {
+            var wrap = document.getElementById('wrap');
+            var wrapContainer = document.getElementById('wrap-container');
+            var windowWidth = window.innerWidth;
+            
+            var scale = windowWidth / 1100;
+            if (scale > 1) scale = 1; 
+            
+            window.currentScale = scale;
+            
+            wrap.style.transform = 'scale(' + scale + ')';
+            wrapContainer.style.width = (1100 * scale) + 'px';
+            wrapContainer.style.height = (680 * scale) + 'px';
+            wrapContainer.style.marginTop = scale < 1 ? '20px' : '100px';
+        }
+
+        window.addEventListener('resize', adaptarPantalla);
+        window.addEventListener('load', adaptarPantalla);
+        setTimeout(adaptarPantalla, 500);
+    </script>
+</body>
+</html>
