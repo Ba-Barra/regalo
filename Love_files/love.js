@@ -161,7 +161,7 @@
             ctx.scale(scale, scale);
             ctx.moveTo(0, 0);
     	    ctx.lineTo(15, 15);
-    	    ctx.lineTo(60, 15);
+    	    ctx.lineTo(105, 15);
             ctx.stroke();
 
             ctx.moveTo(0, 0);
